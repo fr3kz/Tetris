@@ -26,23 +26,32 @@ Block Game::get_next_block(){
 }
 void Game::CheckIfBlockActive(Block bl){
     if(!bl.isActive){
-        //nowy block
         blocks.push_back(get_next_block());
     }
-
-
 }
 void Game::MoveDown() {
 
     for (auto &bl: blocks) {
         if(bl.isActive){
-            bl.Move(1,0);
-            grid.UpdateGrid(block,1,0);
-            CheckIfBlockActive(bl);
+            //sprawdzenie czy moze zrobic ruch
+           // if (!grid.CheckCollison(bl,1,0)){
+           if(!grid.CheckGridBorder(block,1,0)){
+                grid.UpdateGrid(bl,1,0);
+                bl.Move(1,0);
+            }else{
+                bl.isActive = false;
+                blocks.push_back(get_next_block());
+
+            }
+
+
+        }
+
+
         }
     }
 
-}
+
 void Game::MoveLeft() {
 
     for (auto &bl: blocks) {
@@ -67,9 +76,7 @@ void Game::MoveRight() {
 
 
 void Game::CheckForCollision(Block bl,int row,int col) {
-    for(auto pos: bl.GetCellPositions()){
-        //sprawdzenie czy zadne z pozycji nie przekracza/dotyka
-    }
+    bl.CheckForCollision(grid.grid);
 }
 
 

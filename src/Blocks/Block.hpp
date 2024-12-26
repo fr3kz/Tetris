@@ -22,6 +22,7 @@ public :
     int rowOffset;
     int colOffset;
     void Draw();
+    bool CheckForCollision(int grd[20][10]);
 
 
     std::vector<Position> GetCellPositions();

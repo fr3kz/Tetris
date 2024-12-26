@@ -8,6 +8,7 @@
 #include "raylib.h"
 #include "Blocks/Block.hpp"
 
+
 class Grid{
 public:
     Grid();
@@ -16,6 +17,8 @@ public:
     void Draw();
     void Print();
     void UpdateGrid(Block block,int row, int col);
+    bool CheckCollison(Block block,int row,int col);
+    bool CheckGridBorder(Block block,int row,int col);
 
 private:
 

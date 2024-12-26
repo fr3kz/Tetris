@@ -38,7 +38,7 @@ int main() {
 
 
         BeginDrawing();
-        game.grid.Print();
+
         ClearBackground(blue);
 
         game.DrawBlocks();

@@ -22,7 +22,7 @@ void Block::Draw(){
 }
 
 void Block::Move(int row, int col) {
-    colOffset += col;
+        colOffset += col;
     rowOffset += row;
 
 }
@@ -37,4 +37,13 @@ std::vector<Position> Block::GetCellPositions(){
     return movedTiles;
 
 
+}
+
+bool Block::CheckForCollision( int grd[20][10]) {
+    for (auto pp: GetCellPositions()) {
+        if(pp.row+rowOffset == 19){
+            return true;
+        }
+    }
+    return false;
 }
