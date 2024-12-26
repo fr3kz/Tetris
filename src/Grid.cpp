@@ -39,3 +39,22 @@ void Grid::Draw() {
         }
     }
 }
+
+void Grid::UpdateGrid(Block block,int row, int col) {
+    for (int i = 0; i < numRows; i++) {
+        for (int j = 0; j < numCols; j++) { // Poprawiono z "i++" na "j++"
+            for (auto p: block.GetCellPositions()) {
+                if(i==p.row and j==p.col){
+                    grid[i][j] =0;
+                }
+            }
+        }
+    }
+
+
+            for (auto p: block.GetCellPositions()) {
+               grid[p.row+row][p.col+col] =1;
+
+    }
+
+}

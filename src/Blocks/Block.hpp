@@ -15,14 +15,14 @@ public :
     int id;
     std::map<int,std::vector<Position>> cells;
     void Move(int row, int col);
-
-public:
+    bool isActive;
     int cellSize;
     int rotationState;
     std::vector<Color> colors;
     int rowOffset;
     int colOffset;
     void Draw();
+
 
     std::vector<Position> GetCellPositions();
 };

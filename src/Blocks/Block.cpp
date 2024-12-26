@@ -9,6 +9,7 @@ Block::Block() {
     colors = GetCellColors();
     rowOffset = 0;
     colOffset=0;
+    isActive = true;
 }
 
 void Block::Draw(){
@@ -21,8 +22,9 @@ void Block::Draw(){
 }
 
 void Block::Move(int row, int col) {
-    rowOffset += row;
     colOffset += col;
+    rowOffset += row;
+
 }
 
 std::vector<Position> Block::GetCellPositions(){

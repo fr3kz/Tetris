@@ -40,6 +40,9 @@ add_executable(${PROJECT_NAME} main.cpp
         src/utils/Colors.cpp
         src/Blocks/Blocks.cpp
         src/Blocks/Blocks.hpp
+        src/Game/Game.cpp
+        src/Game/Game.hpp
+        src/utils/Utils.cpp
 )
 
 

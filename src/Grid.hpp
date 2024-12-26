@@ -6,6 +6,8 @@
 #define TETRIS_GRID_HPP
 #include "vector"
 #include "raylib.h"
+#include "Blocks/Block.hpp"
+
 class Grid{
 public:
     Grid();
@@ -13,6 +15,7 @@ public:
     void Initialize();
     void Draw();
     void Print();
+    void UpdateGrid(Block block,int row, int col);
 
 private:
 
